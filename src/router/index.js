@@ -5,6 +5,8 @@ import Profile from '@/views/ProfileView'
 import MemberShip from '@/views/MemberShip'
 import IdentificationView from '@/views/IdentificationView'
 import BookService from '@/views/BookService'
+import ChangePassword from '@/views/ChangePassword'
+import DealerWarranty from '@/views/DealerWarranty'
 
 Vue.use(VueRouter)
 
@@ -14,11 +16,11 @@ const routes = [
     name: 'login',
     component: LoginView
   },
-  // {
-  //   path: '/change',
-  //   name: 'changePassword',
-  //   component: ChangePassword
-  // },
+  {
+    path: '/change',
+    name: 'changePassword',
+    component: ChangePassword
+  },
   {
     path: '/profile',
     name: 'profile',
@@ -40,11 +42,11 @@ const routes = [
   //   name: 'vehicleRegis',
   //   component: VehicleRegistration
   // },
-  // {
-  //   path: '/dealerWarranty',
-  //   name: 'dealerWarranty',
-  //   component: DealerWarranty
-  // },
+  {
+    path: '/dealerWarranty',
+    name: 'dealerWarranty',
+    component: DealerWarranty
+  },
   {
     path: '/bookService',
     name: 'bookService',
