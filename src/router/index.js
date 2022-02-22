@@ -7,6 +7,8 @@ import IdentificationView from '@/views/IdentificationView'
 import BookService from '@/views/BookService'
 import ChangePassword from '@/views/ChangePassword'
 import DealerWarranty from '@/views/DealerWarranty'
+import VehicleRegistration from '@/views/VehicleRegistration'
+import PolicyDetails from '@/views/PolicyDetails'
 
 Vue.use(VueRouter)
 
@@ -37,11 +39,11 @@ const routes = [
     name: 'identification',
     component: IdentificationView
   },
-  // {
-  //   path: '/vehicleRegis',
-  //   name: 'vehicleRegis',
-  //   component: VehicleRegistration
-  // },
+  {
+    path: '/vehicleRegis',
+    name: 'vehicleRegis',
+    component: VehicleRegistration
+  },
   {
     path: '/dealerWarranty',
     name: 'dealerWarranty',
@@ -52,11 +54,11 @@ const routes = [
     name: 'bookService',
     component: BookService
   },
-  // {
-  //   path: '/policyDetails',
-  //   name: 'policyDetails',
-  //   component: policyDetails
-  // },
+  {
+    path: '/policyDetails',
+    name: 'policyDetails',
+    component: PolicyDetails
+  },
   {
     path: '/about',
     name: 'about',
