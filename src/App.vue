@@ -1,13 +1,14 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
-  </div>
+  <v-app id="main">
+    <v-main class="vmaninPosition">
+      <v-container>
+        <router-view></router-view>
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
-
+<script>
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -28,5 +29,8 @@ nav {
       color: #42b983;
     }
   }
+}
+.vmaninPosition {
+  padding: 0 !important;
 }
 </style>

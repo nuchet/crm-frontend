@@ -1,15 +1,60 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import LoginView from '@/views/LoginView'
+import Profile from '@/views/ProfileView'
+import MemberShip from '@/views/MemberShip'
+import IdentificationView from '@/views/IdentificationView'
+import BookService from '@/views/BookService'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    name: 'login',
+    component: LoginView
   },
+  // {
+  //   path: '/change',
+  //   name: 'changePassword',
+  //   component: ChangePassword
+  // },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: Profile,
+    props: true
+  },
+  {
+    path: '/membership',
+    name: 'membership',
+    component: MemberShip
+  },
+  {
+    path: '/identification',
+    name: 'identification',
+    component: IdentificationView
+  },
+  // {
+  //   path: '/vehicleRegis',
+  //   name: 'vehicleRegis',
+  //   component: VehicleRegistration
+  // },
+  // {
+  //   path: '/dealerWarranty',
+  //   name: 'dealerWarranty',
+  //   component: DealerWarranty
+  // },
+  {
+    path: '/bookService',
+    name: 'bookService',
+    component: BookService
+  },
+  // {
+  //   path: '/policyDetails',
+  //   name: 'policyDetails',
+  //   component: policyDetails
+  // },
   {
     path: '/about',
     name: 'about',
