@@ -10,7 +10,7 @@
                 <v-text-field v-model="form.name" placeholder="Username" type="text" prepend-inner-icon="mdi-account" solo :rules="nameRules" required></v-text-field>
                 <v-text-field v-model="form.password" id="id" placeholder="Password" type="password" prepend-inner-icon="mdi-lock" solo :rules="passwordRules" required></v-text-field>
             </v-form>
-            <v-btn color="indigo darken-4 white--text" elevation="3" large small x-large x-small>
+            <v-btn color="indigo darken-4 white--text" elevation="3" large small x-large x-small @click="signIn">
                 Sign In
             </v-btn>
         </div>
@@ -20,6 +20,8 @@
 
 <script>
 import Header from '@/components/HeaderNodrawer'
+// import axios from 'axios'
+import { mapActions } from 'vuex'
 export default {
   components: {
     'app-header': Header
@@ -33,6 +35,7 @@ export default {
         name: '',
         password: ''
       },
+      showError: false,
       dataUser: {
         name: '',
         lastname: '',
@@ -52,33 +55,30 @@ export default {
     }
   },
   methods: {
-    // signIn() {
-    //   if (this.$refs.form.validate()) {
-    //     axios.post('api/login', {
-    //             username: this.form.name,
-    //             password: this.form.password
-    //       })
-    //       .then((res) => {
-    //         this.dataUser = res.data
-    //         console.log(this.dataUser)
-    //         this.$router.push({
-    //           name: 'profile',
-    //           params: {
-    //             data: this.dataUser
-    //           }
-    //         })
-    //         localStorage.setItem('token', this.dataUser.token)
-    //       })
-    //       .catch(function (error) {
-    //         console.error(error)
-    //       })
-    //   }
-    // },
+    ...mapActions(['LogIn']),
+    async signIn () {
+      if (this.$refs.form.validate()) {
+        const User = new FormData()
+        User.append('username', this.form.name)
+        User.append('password', this.form.password)
+        try {
+          await this.LogIn(User)
+          this.$router.push('/profile')
+          this.lo
+          this.showError = false
+        } catch (error) {
+          this.showError = true
+        }
+      }
+    },
     beforeRouteEnter (to, from, next) {
       if (this.dataUser.length !== 0) {
         return next('/profile')
       }
     }
+  },
+  computed: {
+
   }
 }
 </script>

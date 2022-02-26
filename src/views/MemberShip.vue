@@ -26,7 +26,7 @@
           <v-col md="12" sm="12" cols="12">
             <v-card class="mx-auto" max-width="60vw" style="padding-top: 40px">
               <v-img
-                src="/images/icon-01.jpg"
+                src="@/assets/icon-01.jpg"
                 width="55%"
                 height="40%"
                 alt=""
@@ -47,13 +47,13 @@
             <p class="indigo darken-4 white--text">เลขบัตรสมาชิก</p>
           </v-col>
           <v-col md="12" sm="12" cols="12" v-show="isClickMemberShip == true">
-            <v-text-field type="text"></v-text-field>
+            <v-text-field type="text" solo></v-text-field>
           </v-col>
           <v-col md="12" sm="12" cols="12" v-show="isClickBookService == true">
             บุ๊คเซอร์วิช
           </v-col>
           <v-col md="12" sm="12" cols="12" v-show="isClickBookService == true">
-            <v-text-field type="text"></v-text-field>
+            <v-text-field type="text" solo></v-text-field>
           </v-col>
           <v-col md="6" sm="6" cols="6" class="text-center">
             <v-btn class="next-button" elevation="2" @click="onBack()"

@@ -10,7 +10,7 @@
             <v-row>
                 <v-col md="12" sm="12" cols="12">
                     <v-card class="mx-auto" max-width="60vw" style="padding-top: 40px">
-                        <v-img src="/images/vehicleRegis.png" width="55%" height="40%" alt="" class="center-image" />
+                        <v-img src="@/assets/vehicleRegis.png" width="55%" height="40%" alt="" class="center-image" />
                         <v-card-actions>
                             <v-spacer></v-spacer>
                             <v-btn icon to="/camera">
